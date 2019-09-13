@@ -5,7 +5,6 @@
  */
 package colorstriangle;
 
-import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -13,7 +12,7 @@ import java.util.regex.Pattern;
  *
  * @author dgiraldo
  */
-public class ColorsTriangle {
+public class Kata {
 
     private static final Pattern patternLetraG = Pattern.compile("([RB])+");
     private static final Pattern patternLetraB = Pattern.compile("([RG])+");
@@ -22,23 +21,18 @@ public class ColorsTriangle {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void Kata(String[] args) {
+    }
 
-        // Crea el scanner para leer la entrada por consola.
-        Scanner scanner = new Scanner(System.in);
+    public static char triangle(String cadenaEntrada) {
+
         // Crea el patron para establecer los caracteres permitidos.
         Pattern patternCadenaEntrada = Pattern.compile("([RGB])+");
 
-        System.out.println("Por favor escriba la cadena de entrada.");
-
-        // Carga la variable con el valor ingresado por consola.
-        String cadenaEntrada = scanner.nextLine().trim();
-
-        // Asigna a marcher el valor de el reconocimiento del patron
         // para garantizar que se ingresaron los caracteres adecuados.
         Matcher matcher = patternCadenaEntrada.matcher(cadenaEntrada);
 
-        // Convierte la cadena ingresada por consola en un arreglo de caracteres
+        // Convierte la cadena ingresada en un arreglo de caracteres
         char[] caracteres = cadenaEntrada.toCharArray();
 
         // Si la validación del patron es exitosa entra a la función.
@@ -67,7 +61,7 @@ public class ColorsTriangle {
         } else {
             System.out.println("Entrada incorrecta, verifique que sus letras sean mayusculas y que contengan unicamente R, G ó B.");
         }
-        System.out.println(caracteres[0]);
+        return caracteres[0];
     }
 
     /**
