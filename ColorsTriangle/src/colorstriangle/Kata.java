@@ -12,7 +12,11 @@ package colorstriangle;
 public class Kata {
 
     public static char triangle(final String row) {
-        char[] caracteres = row.toCharArray();
+        //System.out.println(row);
+        String fila = replaceCharacter(row);
+        //System.out.println(fila);
+
+        char[] caracteres = fila.toCharArray();
         int pos = (caracteres.length);
 
         while (pos > 1) {
@@ -48,5 +52,10 @@ public class Kata {
             return 'R';
         }
         return letraUno;
+    }
+
+    private static String replaceCharacter(String row) {
+        row = row.replaceAll("RBRGBRB", "G");
+        return row;
     }
 }
